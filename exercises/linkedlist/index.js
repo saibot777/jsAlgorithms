@@ -24,7 +24,7 @@ class LinkedList {
 
         while (node) {
             counter++;
-            node = node.text
+            node = node.next
         }
 
         return counter;
@@ -44,7 +44,7 @@ class LinkedList {
             if (!node.next) {
                 return node;
             }
-            node = node.text;
+            node = node.next;
         }
     }
 
@@ -71,11 +71,11 @@ class LinkedList {
         }
 
         let previous = this.head;
-        let node = this.head.text;
+        let node = this.head.next;
 
         while (node.next) {
             previous = node;
-            node = node.text;
+            node = node.next;
         }
         previous.next = null;
     }
@@ -111,7 +111,7 @@ class LinkedList {
         }
 
         if (index === 0) {
-            this.head = this.head.text;
+            this.head = this.head.next;
             return;
         }
 
@@ -120,6 +120,22 @@ class LinkedList {
             return;
         }
         previous.next = previous.next.next
+    }
+
+    insertAt(data, index) {
+        if (!this.head) {
+            this.head = new Node(data);
+            return;
+        }
+
+        if (index === 0) {
+            this.head = new Node(data, this.head);
+            return;
+        }
+
+        const previous = this.getAt(index - 1) || this.getLast();
+        const node = new Node(data, previous.next);
+        previous.next = node;
     }
 }
 
