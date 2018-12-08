@@ -6,16 +6,20 @@ function charCount(str) {
     const result = {};
 
     for(let i = 0; i < str.length; i++) {
-        let char = str[i]
-        if (result[char] > 0) {
-            result[char]++;
-        } else {
-            result[char] = 1
+        let char = str[i].toLowerCase()
+
+        if (/[a-z0-9]/.test(char)) {
+            if (result[char] > 0) {
+                result[char]++;
+            } else {
+                result[char] = 1
+            }
         }
+        
     }
 
     return result;
 
 }
 
-console.log(charCount('hello'));
+console.log(charCount('Hello 123333'));
