@@ -11,5 +11,5 @@ function sameFrequency(n1, n2){
   
   return arrN2.every(n => 
     !hashTable[n] ? false : (--hashTable[n], true)
-  );
+  ); 
 }
