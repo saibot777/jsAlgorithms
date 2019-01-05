@@ -1,0 +1,4 @@
+function linearSearch(arr, val) {
+    
+}
+
