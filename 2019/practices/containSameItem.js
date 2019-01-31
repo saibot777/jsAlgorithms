@@ -1,5 +1,5 @@
 const array1 = ['a', 'b', 'c', 'x'];
-const array2 = ['z', 'y', 'f'];
+const array2 = ['z', 'y', 'c'];
 
 // First way
 function containSameItem(arr1, arr2) {
@@ -34,3 +34,11 @@ function containSameItem2(arr1, arr2) {
 }
 
 console.log(containSameItem2(array1, array2))
+
+// Third way - O(a + b) Time Complexity & and better code
+function containSameItem3(arr1, arr2) {
+    return arr1.some(item => arr2.includes(item))
+}
+
+console.log(containSameItem3(array1, array2))
+
