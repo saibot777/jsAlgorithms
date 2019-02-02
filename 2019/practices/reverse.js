@@ -16,3 +16,7 @@ function reverse(str) {
 }
 
 console.log(reverse('Hej bro'))
+
+// Second Way - really short way
+const reverse2 = str => [...str].reverse().join(' ');
+console.log(reverse2('Hej bro'))
