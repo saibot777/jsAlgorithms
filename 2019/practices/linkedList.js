@@ -66,6 +66,14 @@ class LinkedList {
         }
         return currentNode;
     }
+
+    remove(index) {
+        const leader = this.traverseToIndex(index - 1)
+        const target = leader.next;
+        leader.next = target.next;
+        this.length--;
+        return this.printList();
+    }
 }
 
 const myLinkedList = new LinkedList(10)
@@ -75,4 +83,5 @@ myLinkedList.prepend(1);
 myLinkedList.printList();
 myLinkedList.insert(2, 99);
 myLinkedList.insert(20, 88);
+myLinkedList.remove(2);
 console.log(myLinkedList.printList())
