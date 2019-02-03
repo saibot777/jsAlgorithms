@@ -1,16 +1,3 @@
-// let myLinkedList = {
-//     head: {
-//         value: 10,
-//         next: {
-//             value: 5,
-//             next: {
-//                 value: 16,
-//                 next: null
-//             }
-//         }
-//     }
-// }
-
 class LinkedList {
     constructor(value) {
         this.head = {
@@ -22,10 +9,20 @@ class LinkedList {
     }
 
     append(value) {
-        // ToDo
+        const newNode = {
+            value,
+            next: null
+        }
+        this.tail.next = newNode;
+        this.tail = newNode;
+        this.length++;
+
+        return this;
     }
 }
 
 const myLinkedList = new LinkedList(10)
+myLinkedList.append(5);
+myLinkedList.append(16);
 
 console.log(myLinkedList)
