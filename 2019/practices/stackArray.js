@@ -14,16 +14,25 @@ class Stack {
         return this.array[this.array.length - 1];
     }
 
+    push(value) {
+        this.array.push(value)
+        return this;
+    }
+
+    pop() {
+        this.array.pop();
+        return this;
+    }
 }
 
 const myStack = new Stack();
 
-// console.log(myStack.push('google'));
-// console.log(myStack.push('udemy'));
-// console.log(myStack.push('course'));
+console.log(myStack.push('google'));
+console.log(myStack.push('udemy'));
+console.log(myStack.push('course'));
 
 // console.log(myStack.peek());
 
-// console.log(myStack.pop());
-// console.log(myStack.pop());
-// console.log(myStack.pop());
+console.log(myStack.pop());
+console.log(myStack.pop());
+console.log(myStack.pop());
