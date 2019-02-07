@@ -30,7 +30,16 @@ class Queue {
     }
 
     dequeue() {
-        
+        if (!this.first) {
+            return null;
+        }
+
+        if (this.first === this.last) {
+            this.last = null;
+        }
+        this.first = this.first.next;
+        this.length--;
+        return this;
     }
 }
 
@@ -38,4 +47,6 @@ const myStack = new Queue();
 
 console.log(myStack.enqueue('Stefan'));
 console.log(myStack.enqueue('Sladjana'));
+
+console.log(myStack.dequeue());
 
