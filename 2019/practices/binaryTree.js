@@ -12,7 +12,10 @@ class BinarySearchTree {
     }
 
     insert(value) {
-
+        const newNode = new Node(value);
+        if (this.root === null) {
+            this.root = newNode;
+        }
     }
 
     lookup(value) {
@@ -29,4 +32,6 @@ function traverse(node) {
     return tree; 
 }
 
-const tree = new BinarySearchTree()
+const tree = new BinarySearchTree();
+console.log(tree.insert(9));
+console.log(traverse(tree.root));
