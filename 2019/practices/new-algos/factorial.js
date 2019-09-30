@@ -1,6 +1,12 @@
 function findFactorialRecursive(number) {
-    return answer;
+    if (number === 2) {
+        return 2;
+    }
+
+    return number * findFactorialRecursive(number - 1);
 }
+
+console.log(findFactorialRecursive(5), 'Recursive');
 
 function findFactorialIterative(number) {
     let answer = 1;
@@ -16,4 +22,4 @@ function findFactorialIterative(number) {
     return answer;
 }
 
-console.log(findFactorialIterative(5));
+console.log(findFactorialIterative(5), 'Iterative');
