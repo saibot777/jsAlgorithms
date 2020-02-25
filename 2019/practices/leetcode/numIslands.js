@@ -14,5 +14,16 @@ var numIslands = function(grid) {
         dfs(x, y - 1);
         dfs(x + 1, y);
         dfs(x, y + 1);
+    };
+
+    let res = 0;
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < m; j++) {
+            if (grid[i][j] == 1) {
+               res++;
+               dfs(i, j); 
+            }
+        }
     }
+    return res;
 };
