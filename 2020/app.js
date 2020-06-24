@@ -31,7 +31,7 @@ console.log(fib(5));
 
 // Prime Numbers
 function isPrime(number) {
-  for (let i = 2; i < Math.sqrt(number); i++) {
+  for (let i = 2; i < number; i++) {
     if (number % i === 0) {
       return false;
     }
@@ -41,3 +41,20 @@ function isPrime(number) {
 
 console.log(isPrime(5));
 console.log(isPrime(9));
+
+function getMin(numbers) {
+  if (!numbers) {
+    return "Invalid input";
+  }
+  let currentMin = numbers[0];
+  for (const num of numbers) {
+    if (num < currentMin) {
+      currentMin = num;
+    }
+  }
+
+  return currentMin;
+}
+
+console.log(getMin([1, 2, 3]));
+console.log(getMin([22, 4, 1]));
