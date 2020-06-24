@@ -48,6 +48,7 @@ function getMin(numbers) {
   }
   let currentMin = numbers[0];
   for (const num of numbers) {
+    // O(n)
     if (num < currentMin) {
       currentMin = num;
     }
@@ -58,3 +59,10 @@ function getMin(numbers) {
 
 console.log(getMin([1, 2, 3]));
 console.log(getMin([22, 4, 1]));
+
+function isEven(number) {
+  return number % 2 === 0; // O(1)
+}
+
+console.log(isEven(4));
+console.log(isEven(7));
