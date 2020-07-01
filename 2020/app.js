@@ -91,3 +91,15 @@ function isPowerOfTwo(number) {
 }
 console.log(isPowerOfTwo(4));
 console.log(isPowerOfTwo(7));
+
+function factorial(number) {
+  let result = 1;
+  for (let i = 2; i <= number; i++) {
+    result = result * i;
+  }
+  return result;
+}
+
+console.log(factorial(3));
+console.log(factorial(4));
+console.log(factorial(5));
