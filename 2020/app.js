@@ -95,7 +95,7 @@ console.log(isPowerOfTwo(7));
 function factorial(number) {
   let result = 1;
   for (let i = 2; i <= number; i++) {
-    result = result * i;
+    result = result * i; // O(n)
   }
   return result;
 }
