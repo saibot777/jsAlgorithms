@@ -67,19 +67,27 @@ function isEven(number) {
 // console.log(isEven(4));
 // console.log(isEven(7));
 
+// function isPowerOfTwo(number) {
+//   if (number < 1) {
+//     return false;
+//   }
+//   let dividedNumber = number;
+//   while (dividedNumber !== 1) {
+//     if (dividedNumber % 2 !== 0) {
+//       return false;
+//     }
+//     dividedNumber = dividedNumber / 2; // O(log n)
+//   }
+//   return true;
+// }
+
+// Bitwise version - faster;
 function isPowerOfTwo(number) {
   if (number < 1) {
     return false;
   }
-  let dividedNumber = number;
-  while (dividedNumber !== 1) {
-    if (dividedNumber % 2 !== 0) {
-      return false;
-    }
-    dividedNumber = dividedNumber / 2;
-  }
-  return true;
-}
 
+  return (number & (number - 1)) === 0; // O(1)
+}
 console.log(isPowerOfTwo(4));
 console.log(isPowerOfTwo(7));
