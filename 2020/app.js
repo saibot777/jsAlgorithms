@@ -193,29 +193,53 @@
 
 // Knapsack - version 2
 
-function knapsack(elements, capacity) {
-  const sack = { items: [], value: 0, weight: 0 };
-  let remainingCapacity = capacity;
+// function knapsack(elements, capacity) {
+//   const sack = { items: [], value: 0, weight: 0 };
+//   let remainingCapacity = capacity;
 
-  for (const el of elements) {
-    if (el.weight <= remainingCapacity) {
-      sack.items.push(el);
-      sack.value += el.value;
-      sack.weight += el.weight;
-      remainingCapacity -= el.weight;
-    }
+//   for (const el of elements) {
+//     if (el.weight <= remainingCapacity) {
+//       sack.items.push(el);
+//       sack.value += el.value;
+//       sack.weight += el.weight;
+//       remainingCapacity -= el.weight;
+//     }
+//   }
+
+//   return sack;
+// }
+
+// const maxCap = 8;
+
+// const items = [
+//   { name: "a", value: 3, weight: 3 },
+//   { name: "b", value: 6, weight: 8 },
+//   { name: "c", value: 10, weight: 3 },
+// ];
+
+// const sack = knapsack(items, maxCap);
+// console.log(sack);
+
+function computeChange(coins, amount) {
+  let remainingAmount = amount;
+
+  const calculatedChange = {
+    selectedCoins: {},
+    numberOfCoins: 0,
+  };
+
+  for (const coin of coins) {
+    const count = Math.floor(remainingAmount / coin);
+    calculatedChange[coin] = count;
+    calculatedChange.numberOfCoins += count;
+    remainingAmount = remainingAmount - coin * count;
   }
 
-  return sack;
+  return calculatedChange;
 }
 
-const maxCap = 8;
+const availableCoins = [100, 50, 20, 10, 5, 2, 1];
+const targetAmount = 129;
 
-const items = [
-  { name: "a", value: 3, weight: 3 },
-  { name: "b", value: 6, weight: 8 },
-  { name: "c", value: 10, weight: 3 },
-];
-
-const sack = knapsack(items, maxCap);
-console.log(sack);
+const change = computeChange(availableCoins, targetAmount);
+console.log(change);
