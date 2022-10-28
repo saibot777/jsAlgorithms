@@ -18,3 +18,14 @@ function removeDupes(str) {
 
   return uniqueChars.join("");
 }
+
+console.log(
+  removeDupes2("abcd"),
+  removeDupes2("aabbccdd"),
+  removeDupes2("abababcdcdcd")
+);
+
+function removeDupes2(str) {
+  const chars = new Set(str);
+  return Array.from(chars).join("");
+}
